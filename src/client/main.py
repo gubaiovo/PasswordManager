@@ -16,7 +16,7 @@ def main(page: ft.Page):
     
     def route_change(route):
         print(f"路由正在切换: {page.route}")
-        
+        page.window.icon = "icon.png"
         # 弹窗清理
         page.overlay.clear()
         
