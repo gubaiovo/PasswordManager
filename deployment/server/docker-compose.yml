@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  password-server:
+    image: gubaiovo/passwordserver:latest
+    container_name: password-server
+    restart: always
+    ports:
+      - "8000:8000" 
+    
+    volumes:
+      - ./data:/app/data
+
+    env_file:
+      - .env
+
+    environment:
+      - DATABASE_URL=sqlite:////app/data/cloud_vault.db

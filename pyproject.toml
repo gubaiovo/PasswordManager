@@ -1,0 +1,55 @@
+[project]
+name = "passwordmmanager"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "gubai", email = "470014599@qq.com" }
+]
+
+dependencies = [
+    "argon2-cffi>=25.1.0",
+    "cryptography>=46.0.3",
+    "fastapi>=0.121.1",
+    "flet==0.28.3",
+    "passlib>=1.7.4",
+    "psycopg2-binary>=2.9.11",
+    "pydantic>=2.12.4",
+    "pydantic-settings>=2.12.0",
+    "pyinstaller>=6.16.0",
+    "python-jose>=3.5.0",
+    "python-multipart>=0.0.20",
+    "requests>=2.32.5",
+    "sqlmodel>=0.0.27",
+    "uvicorn>=0.38.0",
+]
+
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "com.gubaiovo"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "Password Manager"
+
+# company name to display in about app dialogs
+company = "GuBai"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2025 by GuBai"
+
+[tool.flet.app]
+path = "src"
+
+[dependency-groups]
+dev = [
+    "flet[all]==0.28.3",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.28.3"}
